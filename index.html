@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+      
+      <link rel="stylesheet" href="css/stylesheet.css">
+      
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <title>Week 5 EDPS 6447</title>
+  </head>
+  <body>
+      
+    <!-- Just an image -->
+    <nav class="navbar navbar-light">
+      <a class="navbar-brand" href="#">
+        <img src="assets/logo.svg" width="75" height="75" alt="">
+        Behavioral Management
+      </a>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <i style="color:#808080; font-size: 2em; margin-right: 50px;" class="far fa-user"></i>
+            <i style="color:#808080; font-size: 2em; margin-right: 50px;" class="far fa-list-alt"></i>
+            <i style="color:#808080; font-size: 2em; margin-right: 50px;" class="fas fa-bars"></i> 
+        </li>  
+      </ul>
+    </nav>
+      
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 offset-1">
+                
+                <div class="card">
+                  <div class="card-header">
+                    Class
+                  </div>
+                  <div class="card-body">
+                    <form class="form-row">
+                        <div class="form-group col-12">
+                            <div class="btn-group">
+                                <label for="inputState" class="mt-2 mr-2">Groups: </label>
+                                <select id="inputState" class="form-control">
+                                    <option selected>2 Groups (less than 20 students)</option>
+                                    <option>3 Groups (more than 20 students)</option>
+                                </select>
+                            </div>
+                        </div>  
+                    </form>                      
+                  </div>
+                </div>
+                
+                <div class="card">
+                  <div class="card-header">
+                    Behaviors
+                  </div>
+                  <div class="card-body">
+                    <form class="form-row">
+                        <div class="form-group col-9">
+                            <label for="inputBehavior" class="sr-only">Behavior</label>
+                            <input type="text" class="form-control" placeholder="Describe the behavior" id="inputBehavior">
+                        </div>
+                        <div class="form-group col-3">
+                            <a href="#" class="btn btn-secondary w-100">Add</a>
+                        </div>
+                    </form>
+                    <ul class="list-group">
+                      <li class="list-group-item">KYNFOOTY</li>
+                      <li class="list-group-item">Disruptive Behaviors</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="card">
+                  <div class="card-header">
+                    Agent
+                  </div>
+                  <div class="card-body">
+                    <form class="form-row">
+                        <div class="form-group col-12">
+                            <label for="exampleFormControlTextarea1">Conversation</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                        </div>
+                    </form>
+                    <form class="form-row">
+                        <div class="form-group col-9">
+                            <label for="inputBehavior" class="sr-only">Response</label>
+                            <input type="text" class="form-control" placeholder="Write a response..." id="inputBehavior">
+                        </div>
+                        <div class="form-group col-3">
+                            <a href="#" class="btn btn-secondary w-100">Submit</a>
+                        </div>
+                    </form>
+                  </div>
+                </div>
+                
+            </div>
+            <div class="col-7">
+                
+                <div class="card">
+                  <div class="card-header">
+                    Good Behavior Game
+                  </div>
+                  <div class="card-body text-center">
+                    <div id="chart_div" style="height: 600px; width='100%';"></div>
+                    <div>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                          <button style="padding-left:25px; padding-right:25px;padding-top:10px;padding-bottom:10px;" type="button" class="btn btn-secondary">Tiger</button>
+                          <button style="padding-left:25px; padding-right:25px;padding-top:10px;padding-bottom:10px;" type="button" class="btn btn-secondary">Hippo</button>
+                        </div>
+                    </div>
+                  </div>
+                  
+                    
+                </div>
+            </div>
+        </div>  
+    </div>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+      
+    <script src="js/main.js"></script>
+  </body>
+</html>

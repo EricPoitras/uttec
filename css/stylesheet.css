@@ -1,0 +1,12 @@
+nav.navbar{
+    background-color: white;
+}
+
+body{
+    background-color: lightgray;
+}
+
+.card{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
