@@ -32,4 +32,11 @@ $(document).ready(function(){
         hippocount++;
         drawAxisTickColors();
     });
-})
+    
+    $("#addbehavior").click(function(){
+        console.log("click event add behavior");
+        var behavior = $("#inputBehavior").val();
+        console.log(behavior);
+        $("#listbehaviors").append("<li class='list-group-item'>"+behavior+"</li>"); 
+    });
+});
