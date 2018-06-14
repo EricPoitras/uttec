@@ -28,6 +28,9 @@ function setdatafromlocalstorage(){
          $("title").text(username);
          $(".navbar-brand").html("<img src='assets/logo.svg' width='75' height='75' alt=''>Behavioral Management: "+classname);
          $("#listbehaviors").html(JSON.parse(listofbehaviors));
+         $("#listbehaviorsdisplay").html(JSON.parse(listofbehaviors));
+         //document.getElementById("listbehaviordisplay").getElementsByClassName("fa-trash")[0].style.display = "none";
+         //$("#listbehaviordisplay .fa-trash").hide();
          
     } else {
         // Sorry! No Web Storage support..
@@ -55,6 +58,9 @@ function updatelocalstorage(){
         localStorage.username = username;
         localStorage.classname = classname;
         localStorage.listofbehaviors = listofbehaviors;
+        $("#listbehaviorsdisplay").html(JSON.parse(listofbehaviors));
+        //document.getElementById("listbehaviordisplay").getElementsByClassName("fa-trash")[0].style.display = "none";
+         //$("#listbehaviordisplay .fa-trash").hide();
     } else {
         // Sorry! No Web Storage support..
         console.log("Connection to local storage is not available...")
