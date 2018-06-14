@@ -26,16 +26,16 @@
       </a>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <i style="color:#808080; font-size: 2em; margin-right: 50px;" class="far fa-user"></i>
-            <i style="color:#808080; font-size: 2em; margin-right: 50px;" class="far fa-list-alt"></i>
-            <i style="color:#808080; font-size: 2em; margin-right: 50px;" class="fas fa-bars"></i> 
+            <i id="user" style="font-size: 2em; margin-right: 50px;" class="far fa-user"></i>
+            <i id="form" style="font-size: 2em; margin-right: 50px;" class="far fa-list-alt"></i>
+            <i id="settings" style="font-size: 2em; margin-right: 50px;" class="fas fa-bars"></i> 
         </li>  
       </ul>
     </nav>
       
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-3 offset-1">
+        <div class="row justify-content-center">
+            <div id="settingsmenu" class="col-3 offset-1">
                 
                 <div class="card">
                   <div class="card-header">
@@ -47,8 +47,8 @@
                             <div class="btn-group">
                                 <label for="inputState" class="mt-2 mr-2">Groups: </label>
                                 <select id="inputState" class="form-control">
-                                    <option selected>2 Groups (less than 20 students)</option>
-                                    <option>3 Groups (more than 20 students)</option>
+                                    <option>2 Groups (less than 20 students)</option>
+                                    <option selected>3 Groups (more than 20 students)</option>
                                 </select>
                             </div>
                         </div>  
@@ -71,8 +71,8 @@
                         </div>
                     </form>
                     <ul id="listbehaviors" class="list-group">
-                      <li class="list-group-item">KYNFOOTY</li>
-                      <li class="list-group-item">Disruptive Behaviors</li>
+                      <li class="list-group-item">KYNFOOTY<i class="fas fa-trash float-right"></i></li>
+                      <li class="list-group-item">Disruptive Behaviors<i class="fas fa-trash float-right"></i></li>
                     </ul>
                   </div>
                 </div>
@@ -113,6 +113,7 @@
                         <div class="btn-group" role="group" aria-label="Basic example">
                           <button id="tigerbutton" style="padding-left:25px; padding-right:25px;padding-top:10px;padding-bottom:10px;" type="button" class="btn btn-secondary">Tiger</button>
                           <button id="hippobutton" style="padding-left:25px; padding-right:25px;padding-top:10px;padding-bottom:10px;" type="button" class="btn btn-secondary">Hippo</button>
+                          <button id="monkeybutton" style="padding-left:25px; padding-right:25px;padding-top:10px;padding-bottom:10px;" type="button" class="btn btn-secondary">Monkey</button>
                         </div>
                     </div>
                   </div>
@@ -121,6 +122,36 @@
                 </div>
             </div>
         </div>  
+    </div>
+      
+    <!-- Modal -->
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="formGroupExampleInput">Teacher Username</label>
+                <input type="text" class="form-control" id="formGroupInput1" placeholder="e.g., Lauren Perez">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Class Name</label>
+                <input type="text" class="form-control" id="formGroupInput2" placeholder="e.g., Math101">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button id="savebutton" type="button" class="btn btn-secondary">Save changes</button>
+          </div>
+        </div>
+      </div>
     </div>
     
 

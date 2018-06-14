@@ -10,3 +10,11 @@ body{
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+#listbehaviors i, #user, #form, #settings{
+    color: lightgray;
+}
+
+#listbehaviors i:hover, #user:hover, #form:hover, #settings:hover{
+    color: gray;
+}
