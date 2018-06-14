@@ -7,6 +7,9 @@ var monkeycount = 0;
 var groups = 3;
 var username;
 var classname;
+var listofbehaviors;
+
+
 
 function setdatafromlocalstorage(){
     if (localStorage.getItem("username") !== null) {
@@ -18,13 +21,14 @@ function setdatafromlocalstorage(){
         groups = parseInt(localStorage.groups);
         username = localStorage.username;
         classname = localStorage.classname;
+        listofbehaviors = localStorage.listofbehaviors;
         
         $("#formGroupInput1").val(username);
         $("#formGroupInput2").val(classname);
          $("title").text(username);
          $(".navbar-brand").html("<img src='assets/logo.svg' width='75' height='75' alt=''>Behavioral Management: "+classname);
-        
-        
+         $("#listbehaviors").html(JSON.parse(listofbehaviors));
+         
     } else {
         // Sorry! No Web Storage support..
         console.log("Connection to local storage is not available...");
@@ -34,8 +38,11 @@ function setdatafromlocalstorage(){
         groups = 3;
         username = "";
         classname = "";
+        listofbehaviors = "";
     }
 }
+
+
 
 function updatelocalstorage(){
     if (typeof(Storage) !== "undefined") {
@@ -47,11 +54,14 @@ function updatelocalstorage(){
         localStorage.groups = groups;
         localStorage.username = username;
         localStorage.classname = classname;
+        localStorage.listofbehaviors = listofbehaviors;
     } else {
         // Sorry! No Web Storage support..
         console.log("Connection to local storage is not available...")
     }
 }
+
+
 
 function clearlocalstorage(){
     if (typeof(Storage) !== "undefined") {
@@ -63,12 +73,15 @@ function clearlocalstorage(){
         localStorage.removeItem("groups");
         localStorage.removeItem("username");
         localStorage.removeItem("classname");
+        localStorage.removeItem("listofbehaviors");
         console.log("Local storage is cleared...");
     } else {
         // Sorry! No Web Storage support..
         console.log("Connection to local storage is not available...")
     }
 }
+
+
 
 function drawAxisTickColors() {
     
@@ -95,6 +108,8 @@ function drawAxisTickColors() {
       var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
       chart.draw(data,options);
 }
+
+
 
 $(document).ready(function(){
     console.log("Document load event");
@@ -126,7 +141,10 @@ $(document).ready(function(){
         console.log("click event add behavior");
         var behavior = $("#inputBehavior").val();
         console.log(behavior);
-        $("#listbehaviors").append("<li class='list-group-item'>"+behavior+"<i class='fas fa-trash float-right'></li>"); 
+        $("#listbehaviors").append("<li class='list-group-item'>"+behavior+"<i class='fas fa-trash float-right'></li>");
+        listofbehaviors = JSON.stringify($("#listbehaviors").html());
+        console.log("List of behavior in string format :"+listofbehaviors);
+        updatelocalstorage();
     });
     
     /*$("#listbehaviors i").click(function(){
@@ -135,6 +153,9 @@ $(document).ready(function(){
     
     $(document).on('click', '#listbehaviors i', function(){
         $(this).parent().remove();
+        listofbehaviors = JSON.stringify($("#listbehaviors").html());
+         console.log("List of behavior in string format :"+listofbehaviors);
+         updatelocalstorage();
     });
     
     $("#inputState").click(function(){
@@ -170,6 +191,8 @@ $(document).ready(function(){
          classname = $("#formGroupInput2").val();
          $("title").text(username);
          $(".navbar-brand").html("<img src='assets/logo.svg' width='75' height='75' alt=''>Behavioral Management: "+classname);
+         listofbehaviors = JSON.stringify($("#listbehaviors").html());
+         console.log("List of behavior in string format :"+listofbehaviors);
          updatelocalstorage();
     });
     
@@ -182,13 +205,11 @@ $(document).ready(function(){
          $(".navbar-brand").html("<img src='assets/logo.svg' width='75' height='75' alt=''>Behavioral Management: "+classname);
          clearlocalstorage();
          location.reload();
-        
     });
     
     $("#closebutton, .close").click(function(){
          drawAxisTickColors(); 
     });
-    
 });
 
 
