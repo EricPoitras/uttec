@@ -8,6 +8,7 @@ var groups = 3;
 var username;
 var classname;
 var listofbehaviors;
+var listofbehaviorsdisplay;
 
 
 
@@ -22,15 +23,23 @@ function setdatafromlocalstorage(){
         username = localStorage.username;
         classname = localStorage.classname;
         listofbehaviors = localStorage.listofbehaviors;
+        listofbehaviorsdisplay = localStorage.listofbehaviorsdisplay;
         
         $("#formGroupInput1").val(username);
         $("#formGroupInput2").val(classname);
          $("title").text(username);
          $(".navbar-brand").html("<img src='assets/logo.svg' width='75' height='75' alt=''>Behavioral Management: "+classname);
          $("#listbehaviors").html(JSON.parse(listofbehaviors));
-         $("#listbehaviorsdisplay").html(JSON.parse(listofbehaviors));
+         $("#listbehaviorsdisplay").html(JSON.parse(listofbehaviorsdisplay));
          //document.getElementById("listbehaviordisplay").getElementsByClassName("fa-trash")[0].style.display = "none";
          //$("#listbehaviordisplay .fa-trash").hide();
+         if(groups == 2){
+            $("#monkeybutton").hide();
+            $("#inputState").val("2 Groups (less than 20 students)");
+         }else{
+            $("#monkeybutton").show();
+            $("#inputState").val("3 Groups (more than 20 students)");
+         }
          
     } else {
         // Sorry! No Web Storage support..
@@ -42,6 +51,7 @@ function setdatafromlocalstorage(){
         username = "";
         classname = "";
         listofbehaviors = "";
+        listofbehaviorsdisplay = "";
     }
 }
 
@@ -58,7 +68,8 @@ function updatelocalstorage(){
         localStorage.username = username;
         localStorage.classname = classname;
         localStorage.listofbehaviors = listofbehaviors;
-        $("#listbehaviorsdisplay").html(JSON.parse(listofbehaviors));
+        localStorage.listofbehaviorsdisplay = listofbehaviorsdisplay;
+        //$("#listbehaviorsdisplay").html(JSON.parse(listofbehaviors));
         //document.getElementById("listbehaviordisplay").getElementsByClassName("fa-trash")[0].style.display = "none";
          //$("#listbehaviordisplay .fa-trash").hide();
     } else {
@@ -80,6 +91,7 @@ function clearlocalstorage(){
         localStorage.removeItem("username");
         localStorage.removeItem("classname");
         localStorage.removeItem("listofbehaviors");
+        localStorage.removeItem("listofbehaviorsdisplay");
         console.log("Local storage is cleared...");
     } else {
         // Sorry! No Web Storage support..
@@ -148,7 +160,9 @@ $(document).ready(function(){
         var behavior = $("#inputBehavior").val();
         console.log(behavior);
         $("#listbehaviors").append("<li class='list-group-item'>"+behavior+"<i class='fas fa-trash float-right'></li>");
+        $("#listbehaviorsdisplay").append("<li class='list-group-item'>"+behavior+"</li>");
         listofbehaviors = JSON.stringify($("#listbehaviors").html());
+        listofbehaviorsdisplay = JSON.stringify($("#listbehaviorsdisplay").html());
         console.log("List of behavior in string format :"+listofbehaviors);
         updatelocalstorage();
     });
@@ -158,9 +172,13 @@ $(document).ready(function(){
     });*/
     
     $(document).on('click', '#listbehaviors i', function(){
-        $(this).parent().remove();
+        var index = $(this).parent().index() + 1;
+        console.log(index);
+        $("ul.listitems li:nth-child("+index+")").remove();
+        //$(this).parent().remove();
         listofbehaviors = JSON.stringify($("#listbehaviors").html());
          console.log("List of behavior in string format :"+listofbehaviors);
+        listofbehaviorsdisplay = JSON.stringify($("#listbehaviorsdisplay").html());
          updatelocalstorage();
     });
     
@@ -198,6 +216,7 @@ $(document).ready(function(){
          $("title").text(username);
          $(".navbar-brand").html("<img src='assets/logo.svg' width='75' height='75' alt=''>Behavioral Management: "+classname);
          listofbehaviors = JSON.stringify($("#listbehaviors").html());
+         listofbehaviorsdisplay = JSON.stringify($("#listbehaviorsdisplay").html());
          console.log("List of behavior in string format :"+listofbehaviors);
          updatelocalstorage();
     });
