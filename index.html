@@ -26,9 +26,9 @@
       </a>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <i id="user" style="font-size: 2em; margin-right: 50px;" class="far fa-user"></i>
-            <i id="form" style="font-size: 2em; margin-right: 50px;" class="far fa-list-alt"></i>
-            <i id="settings" style="font-size: 2em; margin-right: 50px;" class="fas fa-bars"></i> 
+            <i id="user" style="font-size: 2em; margin-right: 50px;" class="far fa-user logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange"></i>
+            <i id="form" style="font-size: 2em; margin-right: 50px;" class="far fa-list-alt logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange"></i>
+            <i id="settings" style="font-size: 2em; margin-right: 50px;" class="fas fa-bars logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange"></i> 
         </li>  
       </ul>
     </nav>
@@ -46,9 +46,9 @@
                         <div class="form-group col-12">
                             <div class="btn-group">
                                 <label for="inputState" class="mt-2 mr-2">Groups: </label>
-                                <select id="inputState" class="form-control">
-                                    <option>2 Groups (less than 20 students)</option>
-                                    <option selected>3 Groups (more than 20 students)</option>
+                                <select id="inputState" class="form-control logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange">
+                                    <option id="2 groups" class="logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange">2 Groups (less than 20 students)</option>
+                                    <option id="3 groups" selected class="logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange">3 Groups (more than 20 students)</option>
                                 </select>
                             </div>
                         </div>  
@@ -64,13 +64,13 @@
                     <form class="form-row">
                         <div class="form-group col-9">
                             <label for="inputBehavior" class="sr-only">Behavior</label>
-                            <input type="text" class="form-control" placeholder="Describe the behavior" id="inputBehavior">
+                            <input type="text" class="form-control logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange" placeholder="Describe the behavior" id="inputBehavior">
                         </div>
                         <div class="form-group col-3">
-                            <a id="addbehavior" href="#" class="btn btn-secondary w-100">Add</a>
+                            <a id="addbehavior" href="#" class="btn btn-secondary w-100 logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange">Add</a>
                         </div>
                     </form>
-                    <ul id="listbehaviors" class="list-group listitems">
+                    <ul id="listbehaviors" class="list-group listitems logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange">
                         <!--<li class="list-group-item">KYNFOOTY<i class="fas fa-trash float-right"></i></li>
                       <li class="list-group-item">Disruptive Behaviors<i class="fas fa-trash float-right"></i></li>-->
                     </ul>
@@ -84,17 +84,17 @@
                   <div class="card-body">
                     <form class="form-row">
                         <div class="form-group col-12">
-                            <label for="exampleFormControlTextarea1">Conversation</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                            <label for="agentconversationwindow">Conversation</label>
+                            <textarea class="form-control logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange" id="agentconversationwindow" rows="5"></textarea>
                         </div>
                     </form>
                     <form class="form-row">
                         <div class="form-group col-9">
-                            <label for="inputBehavior" class="sr-only">Response</label>
-                            <input type="text" class="form-control" placeholder="Write a response..." id="inputBehavior">
+                            <label for="inputresponse" class="sr-only">Response</label>
+                            <input type="text" class="form-control logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange" placeholder="Write a response..." id="inputresponse">
                         </div>
                         <div class="form-group col-3">
-                            <a href="#" class="btn btn-secondary w-100">Submit</a>
+                            <a href="#" class="btn btn-secondary w-100 logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange">Submit</a>
                         </div>
                     </form>
                   </div>
@@ -111,9 +111,9 @@
                     <div id="chart_div" style="height: 600px; width='100%';"></div>
                     <div>
                         <div class="btn-group" role="group" aria-label="Basic example">
-                          <button id="tigerbutton" style="padding-left:25px; padding-right:25px;padding-top:10px;padding-bottom:10px;" type="button" class="btn btn-secondary">Tiger</button>
-                          <button id="hippobutton" style="padding-left:25px; padding-right:25px;padding-top:10px;padding-bottom:10px;" type="button" class="btn btn-secondary">Hippo</button>
-                          <button id="monkeybutton" style="padding-left:25px; padding-right:25px;padding-top:10px;padding-bottom:10px;" type="button" class="btn btn-secondary">Monkey</button>
+                          <button id="tigerbutton" style="padding-left:25px; padding-right:25px;padding-top:10px;padding-bottom:10px;" type="button" class="btn btn-secondary logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange">Tiger</button>
+                          <button id="hippobutton" style="padding-left:25px; padding-right:25px;padding-top:10px;padding-bottom:10px;" type="button" class="btn btn-secondary logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange">Hippo</button>
+                          <button id="monkeybutton" style="padding-left:25px; padding-right:25px;padding-top:10px;padding-bottom:10px;" type="button" class="btn btn-secondary logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange">Monkey</button>
                         </div>
                     </div>
                   </div>
@@ -127,7 +127,7 @@
                         List of Behaviors
                     </div>
                     <div class="card-body">
-                        <ul id="listbehaviorsdisplay" class="list-group listitems">
+                        <ul id="listbehaviorsdisplay" class="list-group listitems logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange">
                             
                         </ul>
                     </div>
@@ -150,18 +150,18 @@
             <form>
               <div class="form-group">
                 <label for="formGroupExampleInput">Teacher Username</label>
-                <input type="text" class="form-control" id="formGroupInput1" placeholder="e.g., Lauren Perez">
+                <input type="text" class="form-control logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange" id="formGroupInput1" placeholder="e.g., Lauren Perez">
               </div>
               <div class="form-group">
                 <label for="formGroupExampleInput2">Class Name</label>
-                <input type="text" class="form-control" id="formGroupInput2" placeholder="e.g., Math101">
+                <input type="text" class="form-control logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange" id="formGroupInput2" placeholder="e.g., Math101">
               </div>
             </form>
           </div>
           <div class="modal-footer">
-            <button id="closebutton" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button id="clearbutton" type="button" class="btn btn-secondary">New session</button>
-            <button id="savebutton" type="button" class="btn btn-secondary">Save changes</button>
+            <button id="closebutton" type="button" class="btn btn-secondary logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange" data-dismiss="modal">Close</button>
+            <button id="clearbutton" type="button" class="btn btn-secondary logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange">New session</button>
+            <button id="savebutton" type="button" class="btn btn-secondary logmouseonclick logmouseondblclick logmouseoncontext logmouseonenter logmouseonleave logtouchstart logtouchend logtouchenter logtouchleave logonchange">Save changes</button>
           </div>
         </div>
       </div>
@@ -178,5 +178,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
       
     <script src="js/main.js"></script>
+    <script src="js/log.js"></script>
   </body>
 </html>
