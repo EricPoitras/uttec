@@ -4,6 +4,5 @@ LOOK AND FEEL IS READY!!!
 
 TO DO LIST
 - Add evaluation form via iframe (wait for Lauren)
-- Add script to handle conversation back and forth with agent through API.AI server - explore the use of webhooks/variables for logging purposes (wait for Lauren)
 - Set up a virtual private server with PHP that allows for writing JSON docs on the backend
 - Set up Google Analytics and MouseFlow integration for data logging purposes (to complement the database - free services for basic analytics data for traffic and usability)
