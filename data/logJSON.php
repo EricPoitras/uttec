@@ -3,7 +3,7 @@ $filename = 'results.json';
 $somecontent = $_POST['data'];
 
 if(is_writable($filename)){
-    if(!$handle = fopen($filename,'a')){
+    if(!$handle = fopen($filename,'w')){
         echo "Cannot open file ($filename)";
         exit;
     }
