@@ -34,6 +34,7 @@ var pagexoffset = '';
 var pageyoffset = '';
 var counter = 0;
 var timer = 0;
+var jsondata;
 
 var jsonObj = [];
 
@@ -72,6 +73,8 @@ else if(myEvent.pageX){
 
 //List of event listeners using jQuery core library
 $(document).ready(function(){
+
+getJSONdata();
     
 //Page is loaded in view - Confirmed is working
 eventlabel = "OnPageLoad"; //Assign custom id such as logmouseonclick1
@@ -188,9 +191,9 @@ $(window).on("resize",function(){
 $(document).on("change paste keyup",".logonchange",function(){
     //Form element, selection or checked state is modified - Confirmed is working
     var value = $(this).val();
-    console.log("Value: " + value);
+    //console.log("Value: " + value);
     var text = $(this).text();
-    console.log("Text: " + text);
+    //console.log("Text: " + text);
     var returnvalue = "";
     if(value != null){
         returnvalue = value;
@@ -209,6 +212,27 @@ $(document).on("change paste keyup",".logonchange",function(){
     
     
 });
+
+function getJSONdata(){
+    
+    $.ajax({
+        type: 'GET',
+        url: 'data/results.json',
+        data: {get_param: 'value'},
+        dataType: 'json',
+        success: function(data){
+            jsondata = JSON.stringify(data);
+            sessionStorage.jsondata = jsondata;
+            
+            jsonObj.push(data);
+            sessionStorage.jsonObjString = JSON.stringify(jsonObj);
+            
+            //console.log(data);
+            //console.log(jsondata);
+            
+        }
+    });
+}
 
 function setvariables(){
     //Get document url
@@ -360,7 +384,7 @@ window.onbeforeunload = WindowCloseHanlder;
 
 function WindowCloseHanlder()
 {	
-    console.log(sessionStorage.jsonObjString);
+    //console.log(sessionStorage.jsonObjString);
     
     $.ajax({
         url: 'data/logJSON.php',
