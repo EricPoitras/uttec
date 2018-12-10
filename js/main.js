@@ -13,14 +13,14 @@ var listofbehaviorsdisplay;
 
 
 function setdatafromlocalstorage(){
-    if (localStorage.getItem("username") !== null) {
+    if (localStorage.getItem("UTTECusername") !== null) {
         // Code for localStorage/sessionStorage.
         console.log("Connection to local storage established...");
         tigercount = parseInt(localStorage.tigercount);
         hippocount =  parseInt(localStorage.hippocount);
         monkeycount = parseInt(localStorage.monkeycount);
         groups = parseInt(localStorage.groups);
-        username = localStorage.username;
+        username = localStorage.UTTECusername;
         classname = localStorage.classname;
         listofbehaviors = localStorage.listofbehaviors;
         listofbehaviorsdisplay = localStorage.listofbehaviorsdisplay;
@@ -65,7 +65,7 @@ function updatelocalstorage(){
         localStorage.hippocount = hippocount;
         localStorage.monkeycount = monkeycount;
         localStorage.groups = groups;
-        localStorage.username = username;
+        localStorage.UTTECusername = username;
         localStorage.classname = classname;
         localStorage.listofbehaviors = listofbehaviors;
         localStorage.listofbehaviorsdisplay = listofbehaviorsdisplay;
@@ -88,7 +88,7 @@ function clearlocalstorage(){
         localStorage.removeItem("hippocount");
         localStorage.removeItem("monkeycount");
         localStorage.removeItem("groups");
-        localStorage.removeItem("username");
+        localStorage.removeItem("UTTECusername");
         localStorage.removeItem("classname");
         localStorage.removeItem("listofbehaviors");
         localStorage.removeItem("listofbehaviorsdisplay");
@@ -207,7 +207,7 @@ $(document).ready(function(){
     });
     
     $("#form").click(function(){
-        window.open("evaluation.html");
+        //window.open("evaluation.html");
     })
     
     $("#savebutton").click(function(){
